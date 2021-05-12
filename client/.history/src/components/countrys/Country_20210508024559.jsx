@@ -1,0 +1,34 @@
+import React, { Component } from 'react';
+import {BrowserRouter as Router, Route, Link, useHistory} from "react-router-dom";
+// import {browserHistory} from 'react-router';
+
+
+class Country extends Component {
+  onNavigateProfil(){
+    let history = useHistory();
+    function handleClick({
+      history.push("/ProfilCountry");
+    }
+    
+  }
+  render() {
+    return (
+      <>
+         <div className="card">
+                   <img className="card-img-top" src= {this.props.country.flag}  alt="" />
+                   <div className="card-body">
+                   <h4 className="card-title">{this.props.country.alpha2Code} | {this.props.country.alpha3Code}</h4>
+                       <p className="card-text">
+                         <Router>
+                           <button onClick={this.onNavigateProfil} className="btn btn-success ">show more</button>
+                           </Router>
+                           {/* <a href={this.props.country.regionalBlocs} className="btn btn-success ">profile</a> */}
+                       </p>
+                   </div>
+                   </div>
+      </>
+    )
+  }
+}
+
+export default Country
